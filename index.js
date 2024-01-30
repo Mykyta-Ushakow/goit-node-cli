@@ -1,5 +1,10 @@
-import { program } from "commander";
-import fs from "fs/promises";
+// import { program } from "commander";
+// import fs from "fs/promises";
+// import path from "path";
+
+const { program } = require("commander");
+const fs = require("fs").promises;
+const path = require("path");
 
 program
 	.option("-a, --action <type>", "choose action")
@@ -38,4 +43,4 @@ async function invokeAction({ action, id, name, email, phone }) {
 
 // invokeAction(options);
 
-console.log("first");
+console.log(path);
