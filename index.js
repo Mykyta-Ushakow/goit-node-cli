@@ -1,10 +1,6 @@
-// import { program } from "commander";
-// import fs from "fs/promises";
-// import path from "path";
-
 const { program } = require("commander");
-const fs = require("fs").promises;
-const path = require("path");
+
+const contactsMd = require("./contacts");
 
 program
 	.option("-a, --action <type>", "choose action")
@@ -21,19 +17,19 @@ const options = program.opts();
 async function invokeAction({ action, id, name, email, phone }) {
 	switch (action) {
 		case "list":
-			// ...
+			contactsMd.listContacts().then(console.log);
 			break;
 
 		case "get":
-			// ... id
+			contactsMd.getContactById(id).then(console.log);
 			break;
 
 		case "add":
-			// ... name email phone
+			contactsMd.addContact(name, email, phone).then(console.log);
 			break;
 
 		case "remove":
-			// ... id
+			contactsMd.removeContact(id).then(console.log);
 			break;
 
 		default:
@@ -41,6 +37,4 @@ async function invokeAction({ action, id, name, email, phone }) {
 	}
 }
 
-// invokeAction(options);
-
-console.log(path);
+invokeAction(options);

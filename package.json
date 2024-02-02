@@ -1,6 +1,7 @@
 {
 	"dependencies": {
-		"commander": "^11.1.0"
+		"commander": "^11.1.0",
+		"uuid": "^9.0.1"
 	},
 	"type": "commonjs",
 	"name": "goit-node-cli",
